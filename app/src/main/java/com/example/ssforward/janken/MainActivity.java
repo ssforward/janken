@@ -1,0 +1,23 @@
+package com.example.ssforward.janken;
+
+import android.content.Intent;
+import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+
+import javax.xml.transform.Result;
+
+public class MainActivity extends AppCompatActivity {
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+
+    public void onJankenButtonTapped(View view) {
+        Intent intent = new Intent(this, result_Activity.class);
+        intent.putExtra("MY_HAND", view.getId());
+        startActivity(intent);
+    }
+}
